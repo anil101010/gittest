@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-03-15T16:36:41 IST" name="Default suite" finished-at="2022-03-15T16:37:00 IST" duration-ms="19418">
+  <suite started-at="2022-03-16T14:21:33 IST" name="Default suite" finished-at="2022-03-16T14:21:54 IST" duration-ms="21340">
     <groups>
     </groups>
-    <test started-at="2022-03-15T16:36:41 IST" name="Default test" finished-at="2022-03-15T16:37:00 IST" duration-ms="19418">
+    <test started-at="2022-03-16T14:21:33 IST" name="Default test" finished-at="2022-03-16T14:21:54 IST" duration-ms="21340">
       <class name="org.selenium.TestTest">
-        <test-method signature="checkoutDBT()[pri:0, instance:org.selenium.TestTest@6da21078]" started-at="2022-03-15T16:36:41 IST" name="checkoutDBT" finished-at="2022-03-15T16:37:00 IST" duration-ms="19361" status="PASS">
+        <test-method signature="checkoutDBT()[pri:0, instance:org.selenium.TestTest@6da21078]" started-at="2022-03-16T14:21:33 IST" name="checkoutDBT" finished-at="2022-03-16T14:21:54 IST" duration-ms="21269" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkoutDBT -->
