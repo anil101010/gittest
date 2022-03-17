@@ -15,8 +15,7 @@ import org.testng.annotations.Test;
 public class TestTest {
 @Test
 void checkoutDBT() throws InterruptedException {
-	BillingAddress billingAddressObj= new BillingAddress();
-	billingAddressObj.setFirstName("anil").setLastName("kumar").setAddressLineOne("11th lane").setCity("guntur").setPostalCode("522004").setEmail("dfdf@dkf.com");
+	BillingAddress billingAddressObj= new BillingAddress().setFirstName("anil").setLastName("kumar").setAddressLineOne("11th lane").setCity("guntur").setPostalCode("522004").setEmail("dfdf@dkf.com");
 	WebDriver driver =new Factory().initDriver()	;
 	driver.get("https://askomdch.com");
 	driver.manage().window().maximize();
