@@ -1,10 +1,10 @@
 package org.selenium;
 
 import org.openqa.selenium.By;
-import org.selenium.BillingAddress;
 import org.selenium.factory.Factory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.selenium.pom.objects.BillingAddress;
 import org.selenium.pom.pages.CartPage;
 import org.selenium.pom.pages.CheckoutPage;
 import org.selenium.pom.pages.HomePage;
@@ -15,6 +15,8 @@ import org.testng.annotations.Test;
 public class TestTest {
 @Test
 void checkoutDBT() throws InterruptedException {
+	BillingAddress billingAddressObj= new BillingAddress();
+	billingAddressObj.setFirstName("anil").setLastName("kumar").setAddressLineOne("11th lane").setCity("guntur").setPostalCode("522004").setEmail("dfdf@dkf.com");
 	WebDriver driver =new Factory().initDriver()	;
 	driver.get("https://askomdch.com");
 	driver.manage().window().maximize();
@@ -35,10 +37,11 @@ CartPage cartPageObj=storePageObj.viewCart();
 Thread.sleep(3000);
 CheckoutPage checkoutPageObj=cartPageObj.assertAndClickCheckOut();
 //driver.findElement(By.cssSelector("#post-1220 > div > div > div > div > div.cart-collaterals > div > div > a")).click();
-new BillingAddress(driver,"anil");
 //driver.findElement(By.id("billing_first_name")).sendKeys("anil");
 //driver.findElement(By.id("billing_last_name")).sendKeys("kumar");
 //driver.findElement(By.id("billing_company")).sendKeys("kas");
+checkoutPageObj.fillForm(billingAddressObj);
 }
+
 
 }
