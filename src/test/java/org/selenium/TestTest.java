@@ -1,5 +1,8 @@
 package org.selenium;
 
+import java.io.IOException;
+import java.io.InputStream;
+
 import org.openqa.selenium.By;
 import org.selenium.factory.Factory;
 import org.openqa.selenium.WebDriver;
@@ -9,12 +12,19 @@ import org.selenium.pom.pages.CartPage;
 import org.selenium.pom.pages.CheckoutPage;
 import org.selenium.pom.pages.HomePage;
 import org.selenium.pom.pages.StorePage;
+import org.selenium.pom.utils.JacksonUtils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+
 public class TestTest {
 @Test
-void checkoutDBT() throws InterruptedException {
+void checkoutDBT() throws InterruptedException, IOException {
+	
+	BillingAddress billingAdd = JacksonUtils.deserializeJson("myBillingAddress.json",BillingAddress.class);
+
 	BillingAddress billingAddressObj= new BillingAddress().setFirstName("anil").setLastName("kumar").setAddressLineOne("11th lane").setCity("guntur").setPostalCode("522004").setEmail("dfdf@dkf.com");
 	WebDriver driver =new Factory().initDriver()	;
 	driver.get("https://askomdch.com");
@@ -22,6 +32,7 @@ void checkoutDBT() throws InterruptedException {
 //	driver.findElement(By.cssSelector("#menu-item-1227 > a")).click();
 	HomePage homePageObj= new HomePage(driver);
 	StorePage storePageObj=homePageObj.clickOnStore();
+	
 //	driver.findElement(By.cssSelector("#woocommerce-product-search-field-0")).sendKeys("blue");
 //	driver.findElement(By.cssSelector("#woocommerce_product_search-1 > form > button")).click();
 //  	Assert.assertEquals(driver.findElement(By.xpath("//main[@id=\"main\"]/div/header/h1")).getText(),"Search results: “blue”");
